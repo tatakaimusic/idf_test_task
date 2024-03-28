@@ -1,0 +1,11 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+
+rates:
+  twelve_api_key: ${TWELVE_API_KEY}
+  values: ${RATES_VALUE}
