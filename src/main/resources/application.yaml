@@ -5,6 +5,18 @@ spring:
     redis:
       host: ${REDIS_HOST}
       port: ${REDIS_PORT}
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${HOST}/${POSTGRES_DB}?currentSchema=production
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    enabled: true
+    change-log: classpath:db\changelog\db.changelog-master.yaml
+    default-schema: liquibase
 
 rates:
   twelve_api_key: ${TWELVE_API_KEY}
